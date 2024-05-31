@@ -1,0 +1,1 @@
+$('.logo').css('color', 'red')
