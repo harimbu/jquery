@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        .slide {position: relative;height: 4px;background: #ddd;}
+        .dot{
+            position: absolute;
+            top: -9px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">버튼 1</button>
+        <span class="text1" style="background: aqua">500이동</span>
+    </p>
+    <p>
+        <button class="btn2">버튼 2</button>
+        <span class="text2" style="background: tomato">50씩 이동</span>
+    </p>
+    <p class="btns">
+        <button class="back">Back</button>
+        <button class="go">Go</button>
+    </p>
+    <div class="slide">
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        // $(선택).animate({스타일}, 시간, 가속도, 콜백)
+        $('.btn1').on('click', function() {
+            $('.text1').animate(
+                { marginLeft: 200, fontSize: 30},
+                2000,
+                function() {
+                    alert('안녕')
+                }
+            )
+        })
+
+        $('.btn2').on('click', function() {
+            $('.text2').animate({marginLeft: '+=30px'})
+        })
+
+        let count = 1
+        $('.btns button').on('click', function() {
+            if(!$('.dot').is(':animated')) {
+                if($(this).hasClass('go')) {
+                    if(count > 10) return
+                    count++
+                    $('.dot').animate({left: '+=10%'})
+                } else {
+                    if(count <= 1) return
+                    count--
+                    $('.dot').animate({left: '-=10%'})
+                }
+            }
+
+        })    
+
+    </script>
+    
+</body>
+</html>
