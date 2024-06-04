@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        section {
+            background-color: #ccc;
+            width: 2000px;
+            height: 5000px;
+        }
+        h2 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>스크롤 이벤트</h1> 
+    <h2><span class="scrollX">0</span> / <span class="scrollY">0</span></h2>     
+    
+    <section>
+        <p>heloo</p>
+    </section>
+
+    <script>
+        $(window).scroll(function(){
+            console.log($(this).scrollTop());
+            console.log($(this).scrollLeft());
+            $('.scrollX').text($(this).scrollLeft())
+            $('.scrollY').text($(this).scrollTop())
+        })
+    </script>
+</body>
+</html>

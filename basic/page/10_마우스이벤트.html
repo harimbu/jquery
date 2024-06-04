@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <h1>마우스 이벤트</h1>
+    <div class="wrap">
+        <section>
+            <button>버튼1</button>
+            <p>내용1</p>
+            <button>버튼2</button>
+            <p>내용3</p>
+        </section>
+
+        <section>
+            <ul id="list_1">
+                <li>내용1</li>
+                <li>내용2</li>
+                <li>내용3</li>
+            </ul>
+            <ul id="list_2">
+                <li>내용1</li>
+                <li>내용2</li>
+                <li>내용3</li>
+            </ul>
+        </section>
+        <script>
+            // mouseenter, mouseleave / mouseover, mouseout
+            $('#list_1') //
+                .on('mouseenter', function() {
+                    $(this).css('background', 'orange')
+                })
+                .on('mouseleave', function() {
+                    $(this).css('background', 'white')
+                })
+
+            $('#list_2') //
+                .on('mouseover', function() {
+                    $(this).css('background', 'red')
+                })
+                .on('mouseout', function() {
+                    $(this).css('background', 'white')
+                })    
+        </script>
+
+        <section>
+            <h3>mousemove</h3>
+            <p>X : <span class="posX"></span></p>
+            <p>Y : <span class="posY"></span></p>
+        </section>
+        <script>
+            $(document).on('mousemove', function(e) {
+                $('.posX').text(e.pageX)
+                $('.posY').text(e.pageY)
+            })
+        </script>
+
+        <section>
+            <select name="" id="site">
+                <option value="https://google.com">구글</option>
+                <option value="https://daum.net" selected>다음</option>
+                <option value="https://naver.com">네이버</option>
+            </select>
+
+            <p class="site">hello</p>
+            <p><a href="https://daum.net" class="btn">이벤트 객체</a></p>            
+        </section>
+
+        <script>
+            //change
+            $('#site').on('change', function() {
+                $('.site').text($(this).val())
+            })
+
+            // 이벤트 객체
+            $('.btn').on('click', function(e) {
+                e.preventDefault()
+                console.log(e.target.text);
+            })
+        </script>
+
+
+    </div>
+</body>
+</html>
