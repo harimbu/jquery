@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <h1>포커스 이벤트</h1>
+    <section>
+        <form action="" id="form1">
+            <h2>focus / blur</h2>
+            <div>
+                <label for="user_id"></label>
+                <input type="text" id="user_id">
+            </div>
+            <div>
+                <label for="user_pw"></label>
+                <input type="password" id="user_pw">
+            </div>
+        </form>
+    </section>
+    <section>
+        <form action="" id="form2">
+            <h2>focusin / focusout</h2>
+            <div>
+                <label for="user_name"></label>
+                <input type="text" id="user_name">
+            </div>
+            <div>
+                <label for="user_tel"></label>
+                <input type="text" id="user_tel">
+            </div>
+        </form>
+    </section>
+
+    <script>
+        //focus / blur
+        $('#user_id, #user_pw').on('focus', function(){
+            $(this).css('background', 'red')
+        })
+        $('#user_id, #user_pw').on('blur', function(){
+            $(this).css('background', '#ddd')
+        })
+
+        //focusin / focusout
+        $('#form2').on('focusin', function(){
+            $(this).css('background', 'green')
+        })
+        $('#form2').on('focusout', function(){
+            $(this).css('background', '#fff')
+        })
+    </script>
+</body>
+</html>

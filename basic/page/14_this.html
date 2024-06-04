@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <h1>this()</h1>
+    <ul class="menu1">
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+        <li><a href="#">메뉴4</a></li>
+    </ul>
+
+    <h1>index()</h1>
+    <ul class="menu2">
+        <li><a href="#">메뉴5</a></li>
+        <li><a href="#">메뉴6</a></li>
+        <li><a href="#">메뉴7</a></li>
+        <li><a href="#">메뉴8</a></li>
+    </ul>
+    <h2 class="idx">index: <span></span></h2>
+
+    <script>
+        $('.menu1 li').on('click', function() {
+            $('.menu1 li').css('background','orange')
+            $(this).css('background', 'red')
+        })
+
+        $('.menu2 li').on('click', function(){
+            var idx = $(this).index()
+            $('.idx span').text(idx)
+        })
+    </script>
+    
+</body>
+</html>
