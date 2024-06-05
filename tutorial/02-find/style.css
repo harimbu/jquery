@@ -1,0 +1,51 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.cards li {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cards li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.cards li.active img {
+    transform: scale(1.1);
+}
+
+.cards li p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    line-height: 50px;
+    padding: 0 16px;
+    opacity: 0;
+}
+
+.cards li:nth-child(1) p {
+    bottom: -60px;
+}
+
+.cards li:nth-child(2) p {
+}
+
+.cards li:nth-child(3) p {
+    left: -100%;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>find</h1>
+
+        <ul class="cards">
+            <li>
+                <img src="../images/gallery_01.jpg" alt="">
+                <p>안녕하세요</p>
+            </li>
+            <li>
+                <img src="../images/gallery_02.jpg" alt="">
+                <p>안녕하세요</p>
+            </li>
+            <li>
+                <img src="../images/gallery_03.jpg" alt="">
+                <p>안녕하세요</p>
+            </li>
+        </ul>        
+    </div>
+
+    <script>
+        var item = $('.cards li')
+        var time = 300 
+
+        item //
+            .eq(0)
+            .mouseenter(function() {
+                $(this).find('p').animate({opacity: 1, bottom : 0}, time)
+                $(this).addClass('active')
+            })
+            .mouseleave(function() {
+                $(this).find('p').animate({opacity: 0, bottom : -60}, time)
+                $(this).removeClass('active')
+            })
+               
+    </script>        
+</body>
+</html>
