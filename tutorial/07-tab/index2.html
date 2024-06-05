@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>tab 2</h1> 
+
+        <div id="tab">
+            <ul class="tab">
+                <li><a href="#tab1">tab1</a></li>
+                <li><a href="#tab2">tab2</a></li>
+                <li><a href="#tab3">tab3</a></li>
+            </ul>
+
+            <div id="tab1"  class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vel repudiandae dignissimos praesentium, dolores a cumque explicabo et tempora dolorem voluptate assumenda, saepe voluptatem, fuga molestiae. Recusandae accusamus optio vero.
+            </div>
+            <div id="tab2" class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vel repudiandae dignissimos praesentium, dolores a cumque explicabo et tempora dolorem voluptate assumenda, saepe voluptatem, fuga molestiae. Recusandae accusamus optio vero.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vel repudiandae dignissimos praesentium, dolores a cumque explicabo et tempora dolorem voluptate assumenda, saepe voluptatem, fuga molestiae. Recusandae accusamus optio vero.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vel repudiandae dignissimos praesentium, dolores a cumque explicabo et tempora dolorem voluptate assumenda, saepe voluptatem, fuga molestiae. Recusandae accusamus optio vero.
+            </div>
+            <div id="tab3" class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vel repudiandae dignissimos praesentium, dolores a cumque explicabo et tempora dolorem voluptate assumenda, saepe voluptatem, fuga molestiae. Recusandae accusamus optio vero.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vel repudiandae dignissimos praesentium, dolores a cumque explicabo et tempora dolorem voluptate assumenda, saepe voluptatem, fuga molestiae. Recusandae accusamus optio vero.
+            </div>
+        </div>
+    </div>    
+
+    <script>
+        // var btns = $('.tab li')
+        // var content = $('.tab_content')     
+        
+        // btns.eq(0).addClass('active')
+        // content.hide().eq(0).show()
+
+        // btns.click(function() {
+        //     btns.removeClass('active')
+        //     $(this).addClass('active')
+
+        //     content.hide()
+
+        //     var activeIndex = $(this).index()
+        //     content.eq(activeIndex).show()
+        // })
+
+        $( "#tab" ).tabs();
+
+        var btns = $('.tab li')
+        btns.eq(0).addClass('active')
+        btns.click(function() {
+            btns.removeClass('active')
+            $(this).addClass('active')
+        })
+
+    </script>        
+</body>
+</html>

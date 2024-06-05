@@ -1,0 +1,32 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #999;
+}
+
+.tab li {
+    border: 1px solid #999;
+    background-color: #eee; 
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+.tab li.active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.tab li a {
+    display: block;
+    padding: 10px 30px;
+}
+
+.tab_content {
+    padding: 30px 16px;
+}

@@ -13,7 +13,7 @@
     <div class="container">
         <h1>tab</h1>
         <ul class="tab">
-            <li><a href="#x" class="active">tab1</a></li>
+            <li><a href="#x">tab1</a></li>
             <li><a href="#x">tab2</a></li>
             <li><a href="#x">tab3</a></li>
             <li><a href="#x">tab4</a></li>
@@ -23,18 +23,33 @@
             <img src="../images/gallery_01.jpg" alt="">
         </div>
         <div class="content">
-            <img src="../images/gallery_01.jpg" alt="">
+            <img src="../images/gallery_02.jpg" alt="">
         </div>
         <div class="content">
-            <img src="../images/gallery_01.jpg" alt="">
+            <img src="../images/gallery_03.jpg" alt="">
         </div>
         <div class="content">
-            <img src="../images/gallery_01.jpg" alt="">
+            <img src="../images/gallery_04.jpg" alt="">
         </div>
     </div>    
 
     <script>
-        
+        var btns = $('.tab li')
+        var content = $('.content')
+
+        btns.eq(0).find('a').addClass('active')
+        content.hide().eq(0).show()
+
+        btns.click(function() {
+            btns.find('a').removeClass('active')
+            $(this).find('a').addClass('active')
+
+            content.hide()
+
+            var activeIndex = $(this).index()
+            content.eq(activeIndex).show()
+        })
+                
     </script>        
 </body>
 </html>
