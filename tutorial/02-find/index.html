@@ -42,7 +42,26 @@
                 $(this).find('p').animate({opacity: 0, bottom : -60}, time)
                 $(this).removeClass('active')
             })
-               
+        item //
+            .eq(1)
+            .mouseenter(function() {
+                $(this).find('p').animate({opacity: 1}, time)
+                $(this).addClass('active')
+            })
+            .mouseleave(function() {
+                $(this).find('p').animate({opacity: 0}, time)
+                $(this).removeClass('active')
+            })       
+        item //
+            .eq(2)
+            .mouseenter(function() {
+                $(this).find('p').animate({opacity: 1, left: 0}, time)
+                $(this).addClass('active')
+            })
+            .mouseleave(function() {
+                $(this).find('p').animate({opacity: 0, left: '-100%'}, time)
+                $(this).removeClass('active')
+            })              
     </script>        
 </body>
 </html>

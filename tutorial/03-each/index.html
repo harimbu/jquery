@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>each</h1>
+
+        <div class="card">
+            <div class="photo">
+                <img src="../images/gallery_01.jpg" alt="">
+                <div class="sns">
+                    <i class="xi-share-alt"></i>
+                    <i class="xi-instagram"></i>
+                    <i class="xi-kakaotalk"></i>
+                    <i class="xi-youtube-play"></i>
+                    <i class="xi-facebook"></i>
+                    <i class="xi-linkedin"></i>
+                </div>                
+            </div>
+
+            <div class="info">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur dolorum neque delectus esse mollitia earum placeat sed eos quia non vel?</p>
+            </div>
+        </div>        
+    </div>
+
+    <script>
+        var sns = $('.sns')
+        var item = $('.sns i')
+
+        sns.hover(
+            function() {
+                item.each(function(index) {                   
+                    $(this).stop().animate({left: index * 40}, 300)
+                })
+            },
+            function() {
+                item.each(function() {                   
+                    $(this).stop().animate({left: 0}, 300)
+                })
+            }
+        )
+                
+    </script>        
+</body>
+</html>
