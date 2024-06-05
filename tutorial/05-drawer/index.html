@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>drawer</h1> 
+        
+        <ul class="cards">
+            <li><img src="../images/gallery_01.jpg" alt=""></li>
+            <li><img src="../images/gallery_02.jpg" alt=""></li>
+            <li><img src="../images/gallery_03.jpg" alt=""></li>
+            <li><img src="../images/gallery_04.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <div class="side">
+        <div class="banner"></div>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>react</li>
+        </ul>
+        <div class="banner"></div>
+        <div class="banner"></div>
+        <div class="banner"></div>
+
+        <div class="btn">
+            <img src="../images/btn_open.png" alt="">
+        </div>
+    </div>    
+
+    <script>
+        $('.btn').click(function() {
+            $('.side').toggleClass('active')
+
+            if($('.side').hasClass('active')) {
+                $(this).find('img').attr('src', '../images/btn_close.png')
+            } else {
+                $(this).find('img').attr('src', '../images/btn_open.png')
+            }
+        })        
+    </script>        
+</body>
+</html>

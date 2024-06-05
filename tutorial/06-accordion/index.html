@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>accordion</h1>
+
+        <div class="text_box">
+            <h3>This is title 1</h3>
+            <p class="text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, eum? Culpa id dolores voluptatum fuga natus recusandae amet necessitatibus sit deserunt beatae. Amet, cum. Autem beatae dolore laudantium facilis totam.
+            </p>
+        </div>     
+        
+        <div class="text_box">
+            <h3>This is title 2</h3>
+            <p class="text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, eum? Culpa id dolores voluptatum fuga natus recusandae amet necessitatibus sit deserunt beatae. Amet, cum. Autem beatae dolore laudantium facilis totam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, eum? Culpa id dolores voluptatum fuga natus recusandae amet necessitatibus sit deserunt beatae. Amet, cum. Autem beatae dolore laudantium facilis totam.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, eum? Culpa id dolores voluptatum fuga natus recusandae amet necessitatibus sit deserunt beatae. Amet, cum. Autem beatae dolore laudantium facilis totam.
+            </p>
+        </div>     
+        
+        <div class="text_box">
+            <h3>This is title 3</h3>
+            <p class="text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, eum? Culpa id dolores voluptatum fuga natus recusandae amet necessitatibus sit deserunt beatae. Amet, cum. Autem beatae dolore laudantium facilis totam.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, eum? Culpa id dolores voluptatum fuga natus recusandae amet necessitatibus sit deserunt beatae. Amet, cum. Autem beatae dolore laudantium facilis totam.
+            </p>
+        </div>
+    </div>    
+
+    <script>
+        $('.text_box:first').find('h3').addClass('active')
+        $('.text_box:first').find('p').slideDown()
+
+        $('.text_box h3').on('click', function() {
+            if($(this).hasClass('active')) {
+                $('.text_box').find('p').stop().slideUp()
+                $(this).removeClass('active').next().stop().slideUp()
+            } else {
+                $('.text_box h3').removeClass('active')
+                $('.text_box').find('p').stop().slideUp()
+                $(this).addClass('active').next().stop().slideDown()
+            }
+        })        
+    </script>        
+</body>
+</html>
