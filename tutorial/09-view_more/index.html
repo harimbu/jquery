@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>view more</h1>
+        <ul class="list">
+           
+        </ul>
+        <button id="btn">더보기</button>
+    </div>    
+
+    <script>
+        var list = $('.list')
+        var btn = $('#btn')
+        
+        for(let i = 1; i <= 50; i++ ) {
+            var item = $(`<li>${i}</li>`)
+            list.append(item)
+        }
+
+        list.find('li').hide()
+        list.find('li').slice(0, 9).show()
+
+        btn.click(function() {
+            list.find('li:hidden').slice(0, 9).fadeIn()
+            if(list.find('li:hidden').length <= 0) {
+                btn.hide()
+            }
+        })
+    </script>        
+</body>
+</html>

@@ -1,0 +1,41 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 6px 12px;
+}
+
+button.active {
+    background-color: #333;
+    color: #fff;
+    outline: none;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.list li {
+    height: 140px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list li span {
+    display: inline-block;
+    margin-left: 10px;
+}

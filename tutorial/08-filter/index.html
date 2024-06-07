@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>filter</h1> 
+        <div class="btns">
+            <button data-id="all" class="active">all</button>
+            <button data-id="web">web</button>
+            <button data-id="ui">ui</button>
+            <button data-id="js">js</button>
+        </div>
+
+        <ul class="list">
+            <li data-item="web">1 <span>web</span></li>
+            <li data-item="ui">2 <span>ui</span></li>
+            <li data-item="web">3 <span>web</span></li>
+            <li data-item="web">4 <span>web</span></li>
+            <li data-item="js">5 <span>js</span></li>
+            <li data-item="ui">6 <span>ui</span></li>
+            <li data-item="js">7 <span>js</span></li>
+            <li data-item="web">8 <span>web</span></li>
+            <li data-item="js">9 <span>js</span></li>
+        </ul>
+    </div>    
+
+    <script>
+        var btns = $('.btns button')
+        var items = $('.list li')        
+
+        btns.on('click', function(e) {
+            btns.removeClass('active')
+            $(this).addClass('active')
+
+            // console.log(e.target.dataset.id);      
+            var category = e.target.dataset.id
+            
+            if(category === 'all') {
+                items.show()
+            } else {
+                // items.hide().filter(`[data-item = ${category}]`).show()
+                items.hide().filter('[data-item = ' + category + ']').show()
+            }
+            
+        })
+       
+    </script>        
+</body>
+</html>
