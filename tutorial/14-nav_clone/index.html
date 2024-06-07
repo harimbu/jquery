@@ -46,11 +46,13 @@
         var scrollValue = $('header').outerHeight() + 100
 
         $(window).on('scroll', function() {
-
-            header2.addClass('show')
+            if($(this).scrollTop() > scrollValue) {
+                header2.addClass('show')
+                header2.find('img').attr('src', '../images/logo_s.svg')
+            } else {
+                header2.removeClass('show')
+            }
         })
-
-
     </script>        
 </body>
 </html>
