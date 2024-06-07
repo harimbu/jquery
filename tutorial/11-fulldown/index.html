@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">가나다</div>
+            <ul class="gnb">
+                <li>
+                    <a href="#">소개</a>
+                    <ul>
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">주요연혁</a></li>
+                        <li><a href="#">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">서비스</a>
+                    <ul>
+                        <li><a href="#">디자이너</a></li>
+                        <li><a href="#">마케터</a></li>
+                        <li><a href="#">크리에이터</a></li>
+                        <li><a href="#">개발자</a></li>
+                        <li><a href="#">기획자</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">가치</a>
+                    <ul>
+                        <li><a href="#">리서치</a></li>
+                        <li><a href="#">기업윤리</a></li>
+                        <li><a href="#">기업윤리규범</a></li>
+                        <li><a href="#">프라이버시 센터</a></li>
+                        <li><a href="#">라이브러리</a></li>
+                        <li><a href="#">개발자</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">홍보</a>
+                    <ul>
+                        <li><a href="#">보도자료</a></li>
+                        <li><a href="#">TV광고</a></li>
+                        <li><a href="#">미디어행사</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">투자</a>
+                    <ul>
+                        <li><a href="#">기업지배구조</a></li>
+                        <li><a href="#">주주구성</a></li>
+                        <li><a href="#">이사회</a></li>
+                        <li><a href="#">정관</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">채용</a>
+                    <ul>
+                        <li><a href="#">채용정보</a></li>                        
+                    </ul>
+                </li>
+            </ul>
+            <div class="user">
+                <i class="xi-user"></i>
+            </div>
+        </header> 
+        
+        <main>
+            <div class="slide"><img src="../images/slide_01.jpg" alt=""></div>
+        </main>
+
+        <div class="dimm"></div>
+    </div>    
+
+    <script>
+    $('.gnb').hover(
+        function() {
+            $('.dimm').addClass('active')
+            $('header').addClass('active')
+            $(this).animate({height: 360}, 'fast') 
+        }, 
+        function() {
+            $('.dimm').removeClass('active')
+            $('header').removeClass('active')
+            $(this).animate({height: 80}, 'fast') 
+        }
+    )
+    </script>        
+</body>
+</html>

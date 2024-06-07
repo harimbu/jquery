@@ -1,0 +1,98 @@
+header {
+    height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    border-top: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+header.active::after {
+    height: 280px;
+    border-top: 1px solid #ddd;
+}
+
+.logo, .user {
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+.gnb {
+    display: flex;
+    z-index: 10;
+    height: 80px;
+    overflow: hidden;
+}
+
+.gnb > li {
+    position: relative;
+}
+
+.gnb > li > a {
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 50px;
+    font-weight: bold;
+}
+
+.gnb ul {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);   
+    font-size: 14px;
+}
+
+.gnb ul li a {
+    display: block;
+    padding: 12px 0;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.gnb ul li a:hover {
+    text-decoration: underline;
+}
+
+.slide {
+    height: calc(100vh - 80px);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dimm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.dimm.active {
+    background: rgba(0,0,0,0.7);
+}
+
+
+
+
