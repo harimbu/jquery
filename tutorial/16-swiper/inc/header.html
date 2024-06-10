@@ -1,0 +1,45 @@
+<header>
+    <div class="logo"><a href="../pages/main.html">가나다</a></div>
+  
+    <ul class="gnb">
+      <li>
+        <a href="../pages/main.html">홈</a>
+      </li>
+      <li>
+        <a href="../pages/intro.html">소개</a>
+      </li>
+      <li>
+        <a href="../pages/service.html">서비스</a>
+      </li>
+      <li>
+        <a href="../pages/slide_03.html">가치</a>
+      </li>
+      <li>
+        <a href="#">홍보</a>
+      </li>
+      <li>
+        <a href="#">투자</a>
+      </li>
+      <li>
+        <a href="#">채용</a>
+      </li>
+    </ul>
+  
+    <button>login</button>
+</header>
+
+<script>
+  var str = location.pathname
+
+  if(str.includes('main')) {
+    $('.gnb li').eq(0).addClass('active')
+  }
+
+  if(str.includes('intro')) {
+    $('.gnb li').eq(1).addClass('active')
+  }
+
+  if(str.includes('service')) {
+    $('.gnb li').eq(2).addClass('active')
+  }
+</script>

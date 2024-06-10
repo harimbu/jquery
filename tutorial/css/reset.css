@@ -11,3 +11,32 @@ h1 {
     margin: 50px 0;
     text-align: center;
 }
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 12px;
+    position: relative;
+}
+
+section img {
+    width: 100%;
+    display: block;
+}
+
+section h1 {
+    margin: 100px 0;
+    font-size: 36px;
+}
+
+section p {
+    max-width: 100px 0;
+    line-height: 1.8;
+    margin: 100px 0;
+}
+
+section .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
