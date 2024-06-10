@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.css" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Magnific Popup</h1>
+
+        <div class="btns">
+            <a class="btn popup-modal" href="#test-modal">Open madal</a>
+            <a class="btn popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open Youtube</a>
+            <a class="btn simple-ajax-popup" href="http://127.0.0.1:5500/tutorial/15-magnific_popup/ajax.html">Load ajax</a>
+        </div>
+
+        <div id="test-modal" class="modal mfp-hide white-popup-block">
+            <h3>Modal dialog</h3>
+            <p>You won't be able to dismiss this by usual means (escape or
+                click button), but you can close it programatically based on
+                user choices or actions.</p>
+            <p><a class="popup-modal-dismiss" href="#">Close</a></p>
+        </div>   
+        
+        <h3>이미지 라이트 박스</h3>
+        <div class="single">
+            <a class="image-popup-vertical-fit" href="../images/gallery_04.jpg" title="구름">
+                <img src="../images/gallery_04.jpg" >
+            </a>
+            <a class="image-popup-fit-width" href="../images/gallery_05.jpg" title="산">
+                <img src="../images/gallery_05.jpg" >
+            </a>
+            <a class="image-popup-no-margins" href="../images/gallery_06.jpg" title="바람">
+                <img src="../images/gallery_06.jpg" >
+            </a>            
+        </div>
+
+        <h3>갤러리 라이트 박스</h3>
+        <div class="gallery">
+            <a href="../images/gallery_04.jpg" title="구름"><img src="../images/gallery_04.jpg"></a>
+            <a href="../images/gallery_05.jpg" title="산"><img src="../images/gallery_05.jpg"></a>
+            <a href="../images/gallery_06.jpg" title="바람"><img src="../images/gallery_06.jpg"></a>
+        </div>
+    
+    </div>    
+
+    <script>
+        // gallery lightbox
+        $('.gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                titleSrc: function(item) {
+                    return item.el.attr('title') + ' by 홍길동';
+                }
+            }
+        });
+
+
+        // single lightbox
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }            
+        });
+
+        $('.image-popup-fit-width').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            image: {
+                verticalFit: false
+            }
+        });
+
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+            image: {
+                verticalFit: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300 // don't foget to change the duration also in CSS
+            }
+        });
+
+
+        // modal popup
+        $('.popup-modal').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#username',
+            modal: true
+        });
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
+
+        // youtube
+        $('.popup-youtube').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+
+            fixedContentPos: false
+        });
+
+        // ajax popup
+        $('.simple-ajax-popup').magnificPopup({
+            type: 'ajax'
+        });
+    </script>        
+</body>
+</html>
