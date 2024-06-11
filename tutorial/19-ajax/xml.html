@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="list"></div>
+    </div>
+    
+    <script>
+        $.ajax({
+            url: './db/user.xml',
+            success : function(data) {
+                $data = $(data).find('record')
+                var tbl = $('<table />')
+                tbl.addClass('tbl')
+
+                $.each($data, function(i, item) {
+                    var id = $(item).find('id').text() 
+                    var firstName = $(item).find('first_name').text() 
+                    var lastName = $(item).find('last_name').text() 
+                    var email = $(item).find('email').text() 
+                    var gender = $(item).find('gender').text() 
+                    var ip = $(item).find('ip_address').text() 
+
+                    var row = $('<tr />').append(
+                        $('<td />').text(id),
+                        $('<td />').text(firstName),
+                        $('<td />').text(lastName),
+                        $('<td />').text(email),
+                        $('<td />').text(gender),
+                        $('<td />').text(ip),
+                    )
+
+                    tbl.append(row)
+                })
+
+                $('.list').append(tbl)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    padding: 0 26px;
+    height: 80px;
+    line-height: 80px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 16px;
+}
+
+.model_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 16px;
+}
+
+.model_list img {
+    width: 100%;
+    display: block;
+}
+
+.model_list .title {
+    margin-top: 16px;
+}
+
+table.users {
+    width: 100%;
+    border: 1px solid #ccc;    
+    margin: 50px 0;
+    border-collapse: collapse;
+}
+
+table.users td, table.users th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+table.users th {
+    font-size: 14px;
+    background-color: rgb(0, 71, 132);
+    color: #fff;
+}
+
+table.users tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl td {
+    border: 1px solid #666;
+    padding: 10px;
+}

@@ -1,0 +1,74 @@
+{
+    "model" : [
+        {
+            "id" : 1,
+            "image" : "../images/photo_01.png",
+            "title" : "여자 상의 1"
+        },
+        {
+            "id" : 2,
+            "image" : "../images/photo_02.png",
+            "title" : "여자 상의 2"
+        },
+        {
+            "id" : 3,
+            "image" : "../images/photo_03.png",
+            "title" : "여자 상의 3"
+        },
+        {
+            "id" : 4,
+            "image" : "../images/photo_04.png",
+            "title" : "여자 상의 4"
+        },
+        {
+            "id" : 5,
+            "image" : "../images/photo_05.png",
+            "title" : "여자 상의 5"
+        },
+        {
+            "id" : 6,
+            "image" : "../images/photo_06.png",
+            "title" : "여자 상의 6"
+        },
+        {
+            "id" : 7,
+            "image" : "../images/photo_07.png",
+            "title" : "여자 상의 7"
+        },
+        {
+            "id" : 8,
+            "image" : "../images/photo_08.png",
+            "title" : "여자 상의 8"
+        },
+        {
+            "id" : 9,
+            "image" : "../images/photo_09.png",
+            "title" : "여자 상의 9"
+        },
+        {
+            "id" : 10,
+            "image" : "../images/photo_10.png",
+            "title" : "여자 상의 10"
+        },
+        {
+            "id" : 11,
+            "image" : "../images/photo_11.png",
+            "title" : "여자 상의 11"
+        },
+        {
+            "id" : 12,
+            "image" : "../images/photo_12.png",
+            "title" : "여자 상의 12"
+        },
+        {
+            "id" : 13,
+            "image" : "../images/photo_13.png",
+            "title" : "여자 상의 13"
+        },
+        {
+            "id" : 14,
+            "image" : "../images/photo_14.png",
+            "title" : "여자 상의 14"
+        }
+    ]
+}
