@@ -18,10 +18,10 @@
     </div>
     
     <ul class="nav">
-        <li><a href="#">html</a></li>
-        <li><a href="#">css</a></li>
-        <li><a href="#">javascript</a></li>
-        <li><a href="#">jquery</a></li>
+        <li><a href="#page1" data-menuanchor="page1">html</a></li>
+        <li><a href="#page2" data-menuanchor="page2">css</a></li>
+        <li><a href="#page3" data-menuanchor="page3">javascript</a></li>
+        <li><a href="#page4" data-menuanchor="page4">jquery</a></li>
     </ul>
 
     <div class="fullpage">
@@ -59,6 +59,8 @@
             autoScrolling:true,
             scrollHorizontally: true,
             navigation: true,            
+            menu : '.nav',
+            anchors : ['page1', 'page2', 'page3', 'page4'],
         });
 
 
