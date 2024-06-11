@@ -4,3 +4,4 @@
 - swiper
 - scrollreveal
 - parallax
+- isotope

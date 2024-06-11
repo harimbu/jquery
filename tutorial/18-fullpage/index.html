@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="header">
+        <span class="bars"><i class="xi-bars"></i></span>
+    </div>
+    
+    <ul class="nav">
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+        <li><a href="#">jquery</a></li>
+    </ul>
+
+    <div class="fullpage">
+        <div class="section">
+            <div class="item">
+                <img src="../images/slide_01.jpg" alt="">
+                <h1>Hellow html</h1>
+            </div>
+        </div>                
+        <div class="section">
+            <div class="item">
+                <img src="../images/slide_02.jpg" alt="">
+                <h1>Hellow css</h1>
+            </div>
+        </div>                
+        <div class="section">
+            <div class="item">
+                <img src="../images/slide_03.jpg" alt="">
+                <h1>Hellow javascript</h1>
+            </div>
+        </div>                
+        <div class="section">
+            <h1 class="title">Hello jquery</h1>            
+            <ul class="list">
+                <li><img src="../images/gallery_01.jpg" alt=""></li>
+                <li><img src="../images/gallery_02.jpg" alt=""></li>
+                <li><img src="../images/gallery_03.jpg" alt=""></li>
+                <li><img src="../images/gallery_04.jpg" alt=""></li>
+            </ul>            
+        </div>                
+    </div>
+
+    <script>
+        $('.fullpage').fullpage({
+            autoScrolling:true,
+            scrollHorizontally: true,
+            navigation: true,            
+        });
+
+
+        $('.bars').on('click', function() {
+            $('.nav').toggleClass('active')
+
+            if($(this).find('i').hasClass('xi-bars')) {
+                $(this).find('i').attr('class', 'xi-angle-left')
+            } else {
+                $(this).find('i').attr('class', 'xi-bars')
+            }
+        })
+    </script>
+</body>
+</html>
