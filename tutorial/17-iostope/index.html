@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>iostope</h1>  
+        <div class="btns">
+            <button class="btn active" data-filter="*">전체</button>
+            <button class="btn" data-filter=".cloud">구름</button>
+            <button class="btn" data-filter=".mountain">산</button>
+            <button class="btn" data-filter=".sea">바다</button>
+            <button class="btn" data-filter=".wind">바람</button>
+        </div>
+
+        <div class="grid">
+            <div class="element-item mountain">
+                <div class="photo">
+                    <img src="../images/gallery_01.jpg" alt="">
+                </div>
+                <h3>산</h3>
+            </div>
+            <div class="element-item sea">
+                <div class="photo">
+                    <img src="../images/gallery_02.jpg" alt="">
+                </div>
+                <h3>바다</h3>
+            </div>
+            <div class="element-item cloud">
+                <div class="photo">
+                    <img src="../images/gallery_03.jpg" alt="">
+                </div>
+                <h3>구름</h3>
+            </div>
+            <div class="element-item cloud">
+                <div class="photo">
+                    <img src="../images/gallery_04.jpg" alt="">
+                </div>
+                <h3>구름</h3>
+            </div>
+            <div class="element-item mountain">
+                <div class="photo">
+                    <img src="../images/gallery_05.jpg" alt="">
+                </div>
+                <h3>산</h3>
+            </div>
+            <div class="element-item wind">
+                <div class="photo">
+                    <img src="../images/gallery_06.jpg" alt="">
+                </div>
+                <h3>바람</h3>
+            </div>
+            <div class="element-item sea">
+                <div class="photo">
+                    <img src="../images/gallery_07.jpg" alt="">
+                </div>
+                <h3>바다</h3>
+            </div>
+            <div class="element-item cloud">
+                <div class="photo">
+                    <img src="../images/gallery_08.jpg" alt="">
+                </div>
+                <h3>구름</h3>
+            </div>
+            <div class="element-item wind">
+                <div class="photo">
+                    <img src="../images/gallery_09.jpg" alt="">
+                </div>
+                <h3>바람</h3>
+            </div>
+            <div class="element-item wind">
+                <div class="photo">
+                    <img src="../images/gallery_10.jpg" alt="">
+                </div>
+                <h3>바람</h3>
+            </div>
+            <div class="element-item sea">
+                <div class="photo">
+                    <img src="../images/gallery_11.jpg" alt="">
+                </div>
+                <h3>바다</h3>
+            </div>
+            <div class="element-item mountain">
+                <div class="photo">
+                    <img src="../images/gallery_12.jpg" alt="">
+                </div>
+                <h3>산</h3>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+    // init Isotope
+    var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows'
+    });
+        
+    // filter functions
+    var filterFns = {
+        // show if number is greater than 50
+        numberGreaterThan50: function() {
+            var number = $(this).find('.number').text();
+            return parseInt( number, 10 ) > 50;
+        },
+        // show if name ends with -ium
+        ium: function() {
+                var name = $(this).find('.name').text();
+                return name.match( /ium$/ );
+            }
+        };
+
+        // bind filter button click
+        $('.btns').on( 'click', 'button', function() {
+            var filterValue = $( this ).attr('data-filter');
+            filterValue = filterFns[ filterValue ] || filterValue;
+            $grid.isotope({ filter: filterValue });
+            $('.btns button').removeClass("active")
+            $(this).addClass('active')
+        });             
+    </script>        
+</body>
+</html>
